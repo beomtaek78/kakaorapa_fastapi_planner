@@ -22,6 +22,6 @@ class User(Document):
         }
 
 # 사용자 로그인 모델
-class UserSignIn(Document):
+class UserSignIn(BaseModel):
     email: EmailStr
     password: str

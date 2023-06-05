@@ -12,7 +12,7 @@ users = {}
 
 # 회원가입(등록)
 @user_router.post("/signup")
-async def sign_new_user(data: User) -> dict:
+async def sign_new_user(user: User) -> dict:
     user_exist = await User.find_one(User.email == user.email)
     if user_exist:
         raise HTTPException(
